@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Interfaces
+namespace BusinessLayer.Interfaces
 {
-    public interface IRepository<T> where T : class
+    public interface IAbstractService<T>
     {
         Task<IEnumerable<T>> Get();
+        //public Task<T> GetById(long id);
+        //public Task Delete(long id);
     }
 }

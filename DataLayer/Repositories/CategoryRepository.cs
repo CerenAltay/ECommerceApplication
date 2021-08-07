@@ -17,10 +17,15 @@ namespace DataLayer.Repositories
             this.context = context;
         }
 
-        public async Task<ActionResult<IEnumerable<Category>>> Get()
+        public async Task<IEnumerable<Entities.Category>> Get()
         {
             //   return await context.Set<T>().OrderBy(x => x.Id).ToListAsync();
-            return await context.Categories.OrderBy(x => x.Id).ToListAsync();
+            return (IEnumerable<Entities.Category>)await context.Categories.OrderBy(x => x.Id).ToListAsync();
         }
+
+        //Task<IEnumerable<Entities.Category>> ICategoryRepository.Get()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Models;
+﻿using BusinessLayer.Interfaces;
 using DataLayer;
 using DataLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -11,19 +11,21 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly ECommerceAppContext context;
-        public CategoriesController(ECommerceAppContext context)
+        private readonly ICategoryService _service;
+        public CategoriesController(ICategoryService service)
         {
-            this.context = context;
+            _service = service;
         }
 
-        public async Task<ActionResult<IEnumerable<Category>>> Get()
+        [HttpPost]
+        public async Task<IActionResult> GetCategory()
         {
-            return await context.Categories.OrderBy(x => x.Id).ToListAsync();
+            await _service.Get();
+            return Ok();
         }
     }
 }
