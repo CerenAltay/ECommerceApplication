@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VueCliMiddleware;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,14 +54,33 @@ namespace API
         {
             if (env.IsDevelopment())
             {
+                //Configure(app, env);
                 app.UseDeveloperExceptionPage();
+                //app.UseSpa(spa =>
+                //{
+                //    spa.Options.SourcePath = "./ECommerceApplication";
+                //    spa.UseVueCli(npmScript: "serve");
+                //});
             }
             else
             {
+                Configure(app, env);
+                app.UseSpa(spa => { });
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //remark:url that the UI runs
+            //remark:for CORS to work certificate added to the trusted certificates in windows certicate manager
+            app.UseCors(options =>
+            {
+                options.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+                //.AllowCredentials();
+            });
+            
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

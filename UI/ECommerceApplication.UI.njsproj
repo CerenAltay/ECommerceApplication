@@ -32,9 +32,11 @@
   <ItemGroup>
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
+    <Content Include="src\api.js" />
     <Content Include="src\App.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\store\index.js" />
     <Content Include="vue.config.js">
       <SubType>Code</SubType>
     </Content>
@@ -45,6 +47,7 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\store\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />

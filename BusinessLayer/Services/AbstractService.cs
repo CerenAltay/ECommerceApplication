@@ -26,5 +26,10 @@ namespace BusinessLayer.Services
         {
             return await _repository.Get();
         }
+
+        //public async Task<T> GetById(int id)
+        //{
+        //    return await _repository.GetById(id);
+        //}
     }
 }

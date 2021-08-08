@@ -5,13 +5,20 @@
 </template>
 
 <script>
+    import { mapActions } from "vuex";
     import Header from '@/components/Header.vue';
 
     export default {
-        name: 'App',
+       
         components: {
-            Header
-        }
+            Header,
+        },
+        methods: {
+            ...mapActions(["setPagesAction"]),
+        },
+        async created() {
+            this.setPagesAction();
+        },
     };
 </script>
 

@@ -29,5 +29,16 @@ namespace API.Controllers
             }
             return Ok(categories);
         }
+
+        //[HttpGet]
+        //public async Task<IActionResult> GetCategoryById(int id)
+        //{
+        //    var categories = await _service.GetById(id);
+        //    if (!categories.Any())
+        //    {
+        //        return NoContent();
+        //    }
+        //    return Ok(categories);
+        //}
     }
 }

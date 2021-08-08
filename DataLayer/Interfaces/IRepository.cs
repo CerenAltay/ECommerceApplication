@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T : class
     {
         Task<IEnumerable<T>> Get();
+        ///Task<T> GetById(int id);
     }
 }
