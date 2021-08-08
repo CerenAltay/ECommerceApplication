@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Route("[controller]")]
     [ApiController]
+    [Route("api/[Controller]")]
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _service;
@@ -21,7 +21,7 @@ namespace API.Controllers
             _service = service;
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> GetCategory()
         {
             await _service.Get();

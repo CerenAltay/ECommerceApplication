@@ -1,14 +1,15 @@
 <template>
-    <div class="container">
-        <header />
-    </div>
+
+    <header />
+
 </template>
 
 <script>
 
-    import Header from './components/Header'
+    import Header from '@/components/Header';
 
     export default {
+        name: 'App',
         components: {
             Header,
         },
