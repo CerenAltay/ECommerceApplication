@@ -1,24 +1,17 @@
 ﻿using BusinessLayer.Interfaces;
-using BusinessLayer.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataLayer.Entities;
+using DataLayer.Repositories;
 
 namespace BusinessLayer.Services
 {
-    public class CategoryService : ICategoryService
+    public class CategoryService : AbstractService<Category>, ICategoryService
     {
-        //private readonly ICategoryRepository _categoryService;
-        public Task<IEnumerable<Category>> Get()
-        {
-            throw new NotImplementedException();
-        }
+        private readonly ICategoryRepository _categoryRepo;
 
-        Task<IEnumerable<Category>> IAbstractService<Category>.Get()
+        public CategoryService(ICategoryRepository categoryRepo) : base(categoryRepo)
         {
-            throw new NotImplementedException();
+            _categoryRepo = categoryRepo;
+
         }
     }
 }

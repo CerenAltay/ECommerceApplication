@@ -1,6 +1,4 @@
 ﻿using BusinessLayer.Interfaces;
-using DataLayer;
-using DataLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,8 +22,12 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategory()
         {
-            await _service.Get();
-            return Ok();
+            var categories = await _service.Get();
+            if (!categories.Any())
+            {
+                return NoContent();
+            }
+            return Ok(categories);
         }
     }
 }

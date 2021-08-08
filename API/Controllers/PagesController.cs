@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ECommerceApplication.BusinessLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,21 @@ namespace API.Controllers
     [ApiController]
     public class PagesController : ControllerBase
     {
+        private readonly IPageService _service;
+        public PagesController(IPageService service)
+        {
+            _service = service;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPage()
+        {
+            var pages = await _service.Get();
+            if (!pages.Any())
+            {
+                return NoContent();
+            }
+            return Ok(pages);
+        }
     }
 }

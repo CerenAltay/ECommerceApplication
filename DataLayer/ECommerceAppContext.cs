@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Models;
+﻿using DataLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -9,7 +9,6 @@ namespace DataLayer
         public ECommerceAppContext(DbContextOptions<ECommerceAppContext> options): base (options)
         {
         }
-
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }

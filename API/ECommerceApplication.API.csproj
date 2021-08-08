@@ -13,11 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataLayer\ECommerceApplication..DataLayer.csproj" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <ProjectReference Include="..\BusinessLayer\ECommerceApplication.BusinessLayer.csproj" />
   </ItemGroup>
 
 </Project>

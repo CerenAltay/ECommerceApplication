@@ -1,32 +1,32 @@
 ﻿using ECommerceApplication.BusinessLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
-namespace API.Controllers
+namespace ECommerceApplication.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class OrdersController : ControllerBase
     {
-        private readonly IProductService _service;
-        public ProductsController(IProductService service)
+        private readonly IOrderService _service;
+        public OrdersController(IOrderService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProduct()
+        public async Task<IActionResult> GetOrder()
         {
-            var products = await _service.Get();
-            if (!products.Any())
+            var pages = await _service.Get();
+            if (!pages.Any())
             {
                 return NoContent();
             }
-            return Ok(products);
+            return Ok(pages);
         }
     }
 }

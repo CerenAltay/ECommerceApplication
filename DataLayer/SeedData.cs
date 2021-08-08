@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Models;
+﻿using DataLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;

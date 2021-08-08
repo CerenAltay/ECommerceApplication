@@ -1,4 +1,12 @@
+using BusinessLayer.Interfaces;
+using BusinessLayer.Services;
 using DataLayer;
+using DataLayer.Interfaces;
+using DataLayer.Repositories;
+using ECommerceApplication.BusinessLayer.Interfaces;
+using ECommerceApplication.BusinessLayer.Services;
+using ECommerceApplication.DataLayer.Interfaces;
+using ECommerceApplication.DataLayer.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +38,14 @@ namespace API
             services.AddDbContext<ECommerceAppContext>(options => options.UseSqlServer
                 (Configuration.GetConnectionString("ECommerceAppContext")));
 
-
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IPageRepository, PageRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IPageService, PageService>();
+            services.AddScoped<IOrderService, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

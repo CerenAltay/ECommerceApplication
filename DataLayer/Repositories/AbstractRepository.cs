@@ -12,19 +12,17 @@ namespace DataLayer.Repositories
 {
     public abstract class AbstractRepository<T>: IRepository<T> where T : class
     {
-        private readonly ECommerceAppContext context;
-        private DbSet<T> entities;
+        protected readonly ECommerceAppContext context;
+        protected DbSet<T> entities;
 
-        public AbstractRepository(ECommerceAppContext context)
+        protected AbstractRepository(ECommerceAppContext context)
         {
             this.context = context;
             entities = context.Set<T>();
         }
 
-        public async Task<IEnumerable<T>> Get()
+        public virtual async Task<IEnumerable<T>> Get()
         {
-            //   return await context.Set<T>().OrderBy(x => x.Id).ToListAsync();
-            //return await entities.OrderBy(x => x.Id).ToListAsync();
             return await entities.ToListAsync();
         }
     }

@@ -1,14 +1,14 @@
 ﻿using DataLayer.Entities;
+using DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Interfaces
+namespace ECommerceApplication.DataLayer.Interfaces
 {
-    public interface ICategoryService : IAbstractService<Category>
+    public interface IOrderRepository : IRepository<Order>
     {
-       //Task <IEnumerable<Category>> Get();
     }
 }

@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Models;
+﻿using DataLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,15 +17,10 @@ namespace DataLayer.Repositories
             this.context = context;
         }
 
-        public async Task<IEnumerable<Entities.Category>> Get()
+        public async Task<IEnumerable<Category>> Get()
         {
-            //   return await context.Set<T>().OrderBy(x => x.Id).ToListAsync();
-            return (IEnumerable<Entities.Category>)await context.Categories.OrderBy(x => x.Id).ToListAsync();
+            return await context.Categories.OrderBy(x => x.Id).ToListAsync();
         }
 
-        //Task<IEnumerable<Entities.Category>> ICategoryRepository.Get()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
