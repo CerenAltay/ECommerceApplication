@@ -54,7 +54,7 @@ namespace DataLayer.Repositories
                 throw new Exception("item does not exist");
             }
 
-             _context.Update(item);
+             _context.Update(existingItem);
 
             await _context.SaveChangesAsync();
         }
