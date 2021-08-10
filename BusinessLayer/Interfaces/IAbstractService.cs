@@ -8,8 +8,10 @@ namespace BusinessLayer.Interfaces
 {
     public interface IAbstractService<T>
     {
-        Task<IEnumerable<T>> Get();
-        //public Task<T> GetById(long id);
-        //public Task Delete(long id);
+        public Task Add(int id);
+        public Task<IEnumerable<T>> Get();
+        public Task<T> GetById(int id);
+        public Task Update(T item);
+        public Task Delete(int id);
     }
 }

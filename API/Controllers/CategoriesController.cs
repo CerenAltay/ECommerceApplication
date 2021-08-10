@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interfaces;
+using BusinessLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,16 +14,16 @@ namespace API.Controllers
     [Route("api/[Controller]")]
     public class CategoriesController : ControllerBase
     {
-        private readonly ICategoryService _service;
+        private readonly ICategoryService _categoryService;
         public CategoriesController(ICategoryService service)
         {
-            _service = service;
+            _categoryService = service;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCategory()
+        public async Task<IActionResult> GetCategories()
         {
-            var categories = await _service.Get();
+            var categories = await _categoryService.Get();
             if (!categories.Any())
             {
                 return NoContent();
@@ -30,15 +31,15 @@ namespace API.Controllers
             return Ok(categories);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetCategoryById(int id)
-        //{
-        //    var categories = await _service.GetById(id);
-        //    if (!categories.Any())
-        //    {
-        //        return NoContent();
-        //    }
-        //    return Ok(categories);
-        //}
+        [HttpGet]
+        public async Task<IActionResult> GetCategoryById(int id)
+        {
+            var category = await _categoryService.GetById(id);
+            if (category == null)
+            {
+                return NoContent();
+            }
+            return Ok(category);
+        }
     }
 }
