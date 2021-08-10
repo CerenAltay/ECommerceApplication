@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ECommerceApplication.DataLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Models
 {
-   public class Product
+   public class Product : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }

@@ -18,9 +18,29 @@ namespace ECommerceApplication.DataLayer.Repositories
             this.context = context;
         }
 
+        public Task Add(Order item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Order>> Get()
         {
             return await context.Orders.OrderBy(x => x.Id).ToListAsync();
+        }
+
+        public Task<Order> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Update(Order item)
+        {
+            throw new NotImplementedException();
         }
     }
 }

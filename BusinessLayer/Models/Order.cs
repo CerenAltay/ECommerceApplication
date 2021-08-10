@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ECommerceApplication.DataLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Models
 {
-    public class Order
+    public class Order : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }

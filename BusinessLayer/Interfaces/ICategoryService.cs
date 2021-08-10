@@ -9,6 +9,8 @@ namespace BusinessLayer.Interfaces
 {
     public interface ICategoryService : IAbstractService<Category>
     {
-       //Task <IEnumerable<Category>> Get();
+       //add if other methods are needed apartfrom the crud
+       //or overwrite below with new
+        //Task <IEnumerable<Category>> Get();
     }
 }

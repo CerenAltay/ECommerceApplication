@@ -8,7 +8,5 @@ using System.Threading.Tasks;
 
 namespace ECommerceApplication.DataLayer.Interfaces
 {
-    public interface IPageRepository : IRepository<Page>
-    {
-    }
+
 }

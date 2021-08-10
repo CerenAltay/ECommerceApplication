@@ -1,4 +1,5 @@
 ﻿using DataLayer.Entities;
+using ECommerceApplication.DataLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,18 +10,10 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Repositories
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : AbstractRepository<Category, BaseEntity>
     {
-        protected readonly ECommerceAppContext context;
-        public CategoryRepository(ECommerceAppContext context)
-        {
-            this.context = context;
-        }
-
-        public async Task<IEnumerable<Category>> Get()
-        {
-            return await context.Categories.OrderBy(x => x.Id).ToListAsync();
-        }
+        public CategoryRepository(ECommerceAppContext context) : base(context) { }
+ 
 
     }
 }
