@@ -1,8 +1,8 @@
-﻿using DataLayer.Entities;
+﻿using ECommerceApplication.DataLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace DataLayer
+namespace ECommerceApplication.DataLayer
 {
     public class ECommerceAppContext : DbContext
     {

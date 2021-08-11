@@ -1,4 +1,4 @@
-﻿using DataLayer.Entities;
+﻿using ECommerceApplication.DataLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer
+namespace ECommerceApplication.DataLayer
 {
     public class SeedData
     {

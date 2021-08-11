@@ -1,10 +1,9 @@
-﻿using BusinessLayer.Interfaces;
-using DataLayer.Entities;
-using DataLayer.Repositories;
-using ECommerceApplication.BusinessLayer.Interfaces;
+﻿using ECommerceApplication.BusinessLayer.Interfaces;
+using ECommerceApplication.DataLayer.Entities;
+using ECommerceApplication.DataLayer.Repositories;
 using ECommerceApplication.DataLayer.Interfaces;
 
-namespace BusinessLayer.Services
+namespace ECommerceApplication.BusinessLayer.Services
 {
     public class ProductService : AbstractService<Product>, IProductService
     {

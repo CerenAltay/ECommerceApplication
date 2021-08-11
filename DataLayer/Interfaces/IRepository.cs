@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Interfaces
+namespace ECommerceApplication.DataLayer.Interfaces
 {
     public interface IRepository<T> where T : DbEntity
     {

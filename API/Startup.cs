@@ -1,8 +1,3 @@
-using BusinessLayer.Interfaces;
-using BusinessLayer.Services;
-using DataLayer;
-using DataLayer.Interfaces;
-using DataLayer.Repositories;
 using ECommerceApplication.BusinessLayer.Interfaces;
 using ECommerceApplication.BusinessLayer.Services;
 using ECommerceApplication.DataLayer.Interfaces;
@@ -19,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommerceApplication.DataLayer;
 
 namespace API
 {

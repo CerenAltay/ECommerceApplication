@@ -1,26 +1,14 @@
-﻿using DataLayer;
-using DataLayer.Entities;
+﻿using ECommerceApplication.DataLayer.Entities;
 using ECommerceApplication.DataLayer.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System;
+using ECommerceApplication.DataLayer.Repositories;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+
 
 namespace ECommerceApplication.DataLayer.Repositories
 {
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository : AbstractRepository<Order>,IOrderRepository
     {
-        protected readonly ECommerceAppContext context;
-        public OrderRepository(ECommerceAppContext context)
-        {
-            this.context = context;
-        }
-
-        public async Task<IEnumerable<Order>> Get()
-        {
-            return await context.Orders.OrderBy(x => x.Id).ToListAsync();
-        }
+        public OrderRepository(ECommerceAppContext db) : base(db) { }
     }
 }

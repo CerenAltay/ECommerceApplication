@@ -1,6 +1,5 @@
-﻿using DataLayer.Entities;
-using DataLayer.Interfaces;
-using ECommerceApplication.DataLayer.Entities;
+﻿using ECommerceApplication.DataLayer.Entities;
+using ECommerceApplication.DataLayer.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Repositories
+namespace ECommerceApplication.DataLayer.Repositories
 {
     public abstract class AbstractRepository<T> : IRepository<T>
         where T : DbEntity

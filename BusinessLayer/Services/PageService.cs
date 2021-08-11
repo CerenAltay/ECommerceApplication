@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Services;
-using DataLayer.Entities;
+﻿using ECommerceApplication.BusinessLayer.Services;
+using ECommerceApplication.DataLayer.Entities;
 using ECommerceApplication.BusinessLayer.Interfaces;
 using ECommerceApplication.DataLayer.Interfaces;
 

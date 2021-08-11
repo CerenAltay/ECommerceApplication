@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Entities
+namespace ECommerceApplication.DataLayer.Entities
 {
     public class Category : DbEntity
     {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using BusinessLayer.Interfaces;
-using DataLayer.Interfaces;
-using DataLayer.Repositories;
+using ECommerceApplication.BusinessLayer.Interfaces;
+using ECommerceApplication.DataLayer.Interfaces;
+using ECommerceApplication.DataLayer.Repositories;
 using ECommerceApplication.DataLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Services
+namespace ECommerceApplication.BusinessLayer.Services
 {
    public abstract class AbstractService<T> : IAbstractService<T>
         where T : DbEntity

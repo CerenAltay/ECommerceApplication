@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Interfaces;
-using BusinessLayer.Models;
+﻿using ECommerceApplication.BusinessLayer.Interfaces;
+using ECommerceApplication.BusinessLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Controllers
+namespace ECommerceApplication.API.Controllers
 {
     [ApiController]
     [Route("api/[Controller]")]
@@ -32,6 +32,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Route("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
             var category = await _categoryService.GetById(id);

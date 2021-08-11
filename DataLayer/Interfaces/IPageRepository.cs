@@ -1,5 +1,5 @@
-﻿using DataLayer.Entities;
-using DataLayer.Interfaces;
+﻿using ECommerceApplication.DataLayer.Entities;
+using ECommerceApplication.DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

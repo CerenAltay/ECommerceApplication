@@ -1,5 +1,4 @@
-﻿using DataLayer;
-using DataLayer.Entities;
+﻿using ECommerceApplication.DataLayer.Entities;
 using ECommerceApplication.DataLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,17 +9,19 @@ using System.Threading.Tasks;
 
 namespace ECommerceApplication.DataLayer.Repositories
 {
-    public class PageRepository : IPageRepository
+    public class PageRepository : AbstractRepository<Page>, IPageRepository
     {
-        protected readonly ECommerceAppContext context;
-        public PageRepository(ECommerceAppContext context)
-        {
-            this.context = context;
-        }
+        public PageRepository(ECommerceAppContext db) : base(db) { }
 
-        public async Task<IEnumerable<Page>> Get()
-        {
-            return await context.Pages.OrderBy(x => x.Id).ToListAsync();
-        }
+        //protected readonly ECommerceAppContext context;
+        //public PageRepository(ECommerceAppContext context)
+        //{
+        //    this.context = context;
+        //}
+
+        //public async Task<IEnumerable<Page>> Get()
+        //{
+        //    return await context.Pages.OrderBy(x => x.Id).ToListAsync();
+        //}
     }
 }

@@ -1,4 +1,4 @@
-﻿using DataLayer.Entities;
+﻿using ECommerceApplication.DataLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Repositories
+namespace ECommerceApplication.DataLayer.Repositories
 {
     public class CategoryRepository : AbstractRepository<Category>, ICategoryRepository
     {

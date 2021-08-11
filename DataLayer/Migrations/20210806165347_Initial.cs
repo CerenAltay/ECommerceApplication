@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DataLayer.Migrations
+namespace ECommerceApplication.DataLayer.Migrations
 {
     public partial class Initial : Migration
     {

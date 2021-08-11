@@ -1,8 +1,8 @@
-﻿using BusinessLayer.Interfaces;
-using DataLayer.Entities;
-using DataLayer.Repositories;
+﻿using ECommerceApplication.BusinessLayer.Interfaces;
+using ECommerceApplication.DataLayer.Entities;
+using ECommerceApplication.DataLayer.Repositories;
 
-namespace BusinessLayer.Services
+namespace ECommerceApplication.BusinessLayer.Services
 {
     public class CategoryService : AbstractService<Category>, ICategoryService
     {

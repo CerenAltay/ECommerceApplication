@@ -1,5 +1,4 @@
-﻿using DataLayer;
-using DataLayer.Entities;
+﻿using ECommerceApplication.DataLayer.Entities;
 using ECommerceApplication.DataLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,13 +9,9 @@ using System.Threading.Tasks;
 
 namespace ECommerceApplication.DataLayer.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : AbstractRepository<Product>, IProductRepository
     {
-        protected readonly ECommerceAppContext context;
-        public ProductRepository(ECommerceAppContext context)
-        {
-            this.context = context;
-        }
+        public ProductRepository(ECommerceAppContext db) : base(db) { }
 
         //public async Task<IEnumerable<Product>> Get()
         //{

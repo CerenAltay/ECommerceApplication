@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Models
+namespace ECommerceApplication.BusinessLayer.Models
 {
    public class Product
     {
