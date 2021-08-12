@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ECommerceApplication.BusinessLayer.Models
 {
-    public class Order
+    public class Order : DomainObject
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }

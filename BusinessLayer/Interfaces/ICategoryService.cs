@@ -1,4 +1,4 @@
-﻿using ECommerceApplication.DataLayer.Entities;
+﻿using ECommerceApplication.BusinessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace ECommerceApplication.BusinessLayer.Interfaces
 {
     public interface ICategoryService : IAbstractService<Category>
     {
-       //Task <IEnumerable<Category>> Get();
+        //Task <IEnumerable<Category>> Get();
     }
 }

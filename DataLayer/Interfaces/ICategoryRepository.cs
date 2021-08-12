@@ -3,7 +3,7 @@ using ECommerceApplication.DataLayer.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ECommerceApplication.DataLayer.Repositories
+namespace ECommerceApplication.DataLayer.Interfaces
 {
     public interface ICategoryRepository : IRepository<Category>
     {

@@ -4,17 +4,12 @@ using ECommerceApplication.DataLayer.Interfaces;
 using ECommerceApplication.DataLayer.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using VueCliMiddleware;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ECommerceApplication.DataLayer;
+using ECommerceApplication.BusinessLayer;
 
 namespace API
 {
@@ -35,6 +30,9 @@ namespace API
             services.AddDbContext<ECommerceAppContext>(options => options.UseSqlServer
                 (Configuration.GetConnectionString("ECommerceAppContext")));
 
+            services.AddAutoMapper(config =>
+            config.AddMaps(typeof(AutoMapperMappings)));
+
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IPageRepository, PageRepository>();
@@ -50,13 +48,7 @@ namespace API
         {
             if (env.IsDevelopment())
             {
-                //Configure(app, env);
                 app.UseDeveloperExceptionPage();
-                //app.UseSpa(spa =>
-                //{
-                //    spa.Options.SourcePath = "./ECommerceApplication";
-                //    spa.UseVueCli(npmScript: "serve");
-                //});
             }
             else
             {
@@ -74,16 +66,13 @@ namespace API
                 options.AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowAnyOrigin();
-                //.AllowCredentials();
             });
             
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseStaticFiles();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

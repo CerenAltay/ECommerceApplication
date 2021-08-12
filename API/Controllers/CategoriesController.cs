@@ -20,27 +20,36 @@ namespace ECommerceApplication.API.Controllers
             _categoryService = service;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetCategories()
-        {
-            var categories = await _categoryService.Get();
-            if (!categories.Any())
-            {
-                return NoContent();
-            }
-            return Ok(categories);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetCategories()
+        //{
+        //    var categories = await _categoryService.Get();
+        //    if (!categories.Any())
+        //    {
+        //        return NoContent();
+        //    }
+        //    return Ok(categories);
+        //}
 
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> GetCategoryById(int id)
-        {
-            var category = await _categoryService.GetById(id);
-            if (category == null)
-            {
-                return NoContent();
-            }
-            return Ok(category);
-        }
+        //[HttpGet]
+        //[Route("{id}")]
+        //public async Task<IActionResult> GetCategoryById(int id)
+        //{
+        //    var category = await _categoryService.GetById(id);
+        //    if (category == null)
+        //    {
+        //        return NoContent();
+        //    }
+        //    return Ok(category);
+        //}
+
+        //[HttpPost]
+        //[Route("{AddCategory}")]
+        //public async Task<IActionResult> AddCategory(Category item)
+        //{
+        //    await _categoryService.Add(item);
+
+        //    return Ok();
+        //}
     }
 }

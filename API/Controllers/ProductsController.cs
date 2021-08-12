@@ -1,4 +1,5 @@
 ﻿using ECommerceApplication.BusinessLayer.Interfaces;
+using ECommerceApplication.BusinessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,17 @@ namespace ECommerceApplication.API.Controllers
         public async Task<IActionResult> GetProduct()
         {
             var products = await _service.Get();
+            if (!products.Any())
+            {
+                return NoContent();
+            }
+            return Ok(products);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddProduct(Product product)
+        {
+            var products = await _service.Add(product);
             if (!products.Any())
             {
                 return NoContent();

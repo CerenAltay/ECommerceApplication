@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ECommerceApplication.BusinessLayer.Models
 {
-    public class Page : DomainObject
+    public class DomainObject
     {
-        public string Name { get; set; }
-        public string Slug { get; set; }
-        public string Content { get; set; }
+        public int id { get; set; }
     }
 }

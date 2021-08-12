@@ -8,7 +8,7 @@ namespace ECommerceApplication.BusinessLayer.Interfaces
 {
     public interface IAbstractService<T>
     {
-        public Task Add(int id);
+        public Task Add(T item);
         public Task<IEnumerable<T>> Get();
         public Task<T> GetById(int id);
         public Task Update(T item);

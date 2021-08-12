@@ -1,7 +1,9 @@
-﻿using ECommerceApplication.BusinessLayer.Interfaces;
-using ECommerceApplication.DataLayer.Entities;
-using ECommerceApplication.DataLayer.Repositories;
+﻿using ECommerceApplication.DataLayer.Repositories;
 using ECommerceApplication.DataLayer.Interfaces;
+using ECommerceApplication.BusinessLayer.Interfaces;
+using ECommerceApplication.DataLayer.Entities;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ECommerceApplication.BusinessLayer.Services
 {
