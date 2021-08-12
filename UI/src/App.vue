@@ -1,13 +1,12 @@
 <template>
   <div class="container">
     <Header />
-   
-      <Body />
-      <Categories />
-      <Products />
-      <Orders/>
-    </div>
-
+    <Body />
+    <!-- <Categories />
+    <Products /> -->
+    <router-view/>
+    <Orders />
+  </div>
 </template>
 
 <script>
@@ -15,16 +14,16 @@ import { mapActions } from "vuex";
 
 import Header from "./components/Header.vue";
 import Body from "./components/Body.vue";
-import Categories from "./components/Categories.vue";
-import Products from "./components/Products.vue";
+//import Categories from "./components/Categories.vue";
+//import Products from "./components/Products.vue";
 import Orders from "./components/Orders.vue";
 
 export default {
   components: {
     Header,
     Body,
-    Categories,
-    Products,
+    // Categories,
+    // Products,
     Orders,
   },
   methods: {

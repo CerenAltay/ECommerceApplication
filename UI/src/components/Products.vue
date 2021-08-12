@@ -22,19 +22,16 @@
           <img :src=" p.image "/>
           </p>
            <p>
-                        {{ p.description }}
-                    </p>
-                    <p>
-                        {{ p.price +' £' }}
-                    </p>
-                      <p>
-                        <button
-                            class="btn btn-primary"
-                            @click="handleAddProduct(p)"
-                        >
-                            Add to cart
-                        </button>
-                    </p>
+                  {{ p.description }}
+              </p>
+              <p>
+                  {{ p.price +' £' }}
+              </p>
+                <p>
+                  <button class="btn btn-primary" @click="handleAddProduct(p)">
+                      Add to cart
+                  </button>
+              </p>
         </li>
       </ul>
       </p>
@@ -44,12 +41,33 @@
 
 <script>
 import { mapState } from "vuex";
+
 export default {
+  // data() {
+  //   return;
+  //   {
+  //     this.products; {
+  //     }
+  //   }
+  // },
+  productAdded: function () {
+    this.getProducts();
+  },
   components: {},
   computed: {
-    ...mapState(["products"]),
+    ...mapState(["products", "productImages"]),
   },
   methods: {
+    //...mapMutations(["setCurrentCategory", "setCurrentPage"]),
+    // ...mapActions(["setProductsByCategoryAction"]),
+    // ...mapActions({addProduct: "cart/AddProduct"}),
+    getProducts() {
+      let uri = "https://localhost:44321/api/products" + this.$route.params.id;
+      this.axios.get(uri, this.product).then((response) => {
+        console.log(response)
+        this.products = response.data;
+      });
+    },
     handleAddProduct(product) {
       this.addProduct(product);
     },
