@@ -42,5 +42,13 @@ namespace ECommerceApplication.API.Controllers
             }
             return Ok(category);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddCategory(Category category)
+        {
+            await _categoryService.AddCategory(category);
+            return Ok();
+
+        }
     }
 }

@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ECommerceApplication.DataLayer;
+using AutoMapper;
 
 namespace API
 {
@@ -32,6 +33,7 @@ namespace API
         {
             services.AddControllers();
             services.AddRazorPages();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<ECommerceAppContext>(options => options.UseSqlServer
                 (Configuration.GetConnectionString("ECommerceAppContext")));
 
@@ -50,21 +52,13 @@ namespace API
         {
             if (env.IsDevelopment())
             {
-                //Configure(app, env);
                 app.UseDeveloperExceptionPage();
-                //app.UseSpa(spa =>
-                //{
-                //    spa.Options.SourcePath = "./ECommerceApplication";
-                //    spa.UseVueCli(npmScript: "serve");
-                //});
             }
             else
             {
-                Configure(app, env);
-                app.UseSpa(spa => { });
+               //direct to Error page
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
             }
 
             //remark:url that the UI runs

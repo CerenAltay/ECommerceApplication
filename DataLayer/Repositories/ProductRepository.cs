@@ -13,9 +13,5 @@ namespace ECommerceApplication.DataLayer.Repositories
     {
         public ProductRepository(ECommerceAppContext db) : base(db) { }
 
-        //public async Task<IEnumerable<Product>> Get()
-        //{
-        //    return await context.Products.OrderBy(x => x.Id).ToListAsync();
-        //}
     }
 }

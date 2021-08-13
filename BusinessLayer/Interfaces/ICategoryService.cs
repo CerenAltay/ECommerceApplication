@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace ECommerceApplication.BusinessLayer.Interfaces
 {
-    public interface ICategoryService : IAbstractService<Category>
+    public interface ICategoryService : IAbstractService<Models.Category>
     {
-       //Task <IEnumerable<Category>> Get();
+       Task<IEnumerable<Models.Category>> GetCategory();
+       Task<Models.Category> GetCategoryById(int id);
+       Task AddCategory(Models.Category item);
+       Task UpdateCategory(Models.Category item);
+       Task DeleteCategory(int id);
     }
 }

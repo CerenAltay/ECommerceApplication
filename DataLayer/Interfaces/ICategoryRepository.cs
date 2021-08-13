@@ -7,6 +7,6 @@ namespace ECommerceApplication.DataLayer.Repositories
 {
     public interface ICategoryRepository : IRepository<Category>
     {
-        //Task<IEnumerable<Category>> Get();
+
     }
 }
