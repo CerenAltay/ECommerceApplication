@@ -32,6 +32,7 @@ namespace API
         {
             services.AddControllers();
             services.AddRazorPages();
+
             services.AddDbContext<ECommerceAppContext>(options => options.UseSqlServer
                 (Configuration.GetConnectionString("ECommerceAppContext")));
 

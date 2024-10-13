@@ -19,8 +19,12 @@ namespace ECommerceApplication.DataLayer
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Customer>().HasKey(x => x.Id);
+            modelBuilder.Entity<Customer>().Property(x => x.Email).HasColumnType("varchar(25)");
+            modelBuilder.Entity<Customer>().Property(x => x.Name).HasColumnType("varchar(25)");
 
             modelBuilder.Entity<Product>().HasKey(x => x.Id);
+            modelBuilder.Entity<Product>().Property(x => x.Name).HasColumnType("varchar(25)");
+            modelBuilder.Entity<Product>().Property(x => x.Description).HasColumnType("varchar(100)");
             modelBuilder.Entity<Product>().HasOne(x => x.Category).WithMany().HasForeignKey(x => x.CategoryId);
 
             modelBuilder.Entity<OrderItem>().HasKey(x => x.Id);
@@ -31,6 +35,7 @@ namespace ECommerceApplication.DataLayer
             modelBuilder.Entity<Order>().HasOne<Customer>().WithMany(x => x.Orders).HasForeignKey(x => x.CustomerId);
 
             modelBuilder.Entity<Category>().HasKey(x => x.Id);
+            modelBuilder.Entity<Category>().Property(x => x.Name).HasColumnType("varchar(25)");
         }
     }
 }
