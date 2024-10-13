@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ECommerceApplication.DataLayer.Entities
+﻿namespace ECommerceApplication.DataLayer.Entities
 {
-    public class DbEntity
+    /// <summary>
+    /// Base class for db entities.
+    /// </summary>
+    public abstract class DbEntity
     {
+        /// <summary>
+        /// The unique identifier.
+        /// </summary>
         public int Id { get; set; }
     }
 }
