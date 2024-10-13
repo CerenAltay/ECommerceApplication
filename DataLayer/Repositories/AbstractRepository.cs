@@ -1,6 +1,5 @@
 ﻿using ECommerceApplication.DataLayer.Entities;
 using ECommerceApplication.DataLayer.Interfaces;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

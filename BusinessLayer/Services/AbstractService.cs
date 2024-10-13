@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using ECommerceApplication.BusinessLayer.Interfaces;
+﻿using ECommerceApplication.BusinessLayer.Interfaces;
 using ECommerceApplication.DataLayer.Interfaces;
 using ECommerceApplication.DataLayer.Repositories;
 using ECommerceApplication.DataLayer.Entities;
