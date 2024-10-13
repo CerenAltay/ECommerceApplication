@@ -37,11 +37,9 @@ namespace API
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IPageRepository, PageRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IPageService, PageService>();
             services.AddScoped<IOrderService, OrderService>();
         }
 

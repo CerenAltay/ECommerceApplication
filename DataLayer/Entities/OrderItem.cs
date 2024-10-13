@@ -6,6 +6,16 @@
     public class OrderItem : DbEntity
     {
         /// <summary>
+        /// Id of the parent order.
+        /// </summary>
+        public int OrderId { get; set; }
+
+        /// <summary>
+        /// Navigation property to the order.
+        /// </summary>
+        public virtual Order Order { get; set; }
+
+        /// <summary>
         /// Id of the to product table.
         /// </summary>
         public int ProductId { get; set; }
