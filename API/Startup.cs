@@ -33,8 +33,16 @@ namespace API
             services.AddControllers();
             services.AddRazorPages();
 
-            services.AddDbContext<ECommerceAppContext>(options => options.UseSqlServer
-                (Configuration.GetConnectionString("ECommerceAppContext")));
+            services.AddDbContext<ECommerceAppContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("ECommerceAppContext"));
+
+            });
+
+            // Trigger database creation
+            var serviceProvider = services.BuildServiceProvider();
+            var dbContext = serviceProvider.GetRequiredService<ECommerceAppContext>();
+            dbContext.Database.EnsureCreated();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
